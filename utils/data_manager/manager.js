@@ -13,14 +13,14 @@ const subscribersPath = path.resolve(__dirname, "../../database/buff/subscribers
 
 const dataManager = {
 
-    saveOriginData : async () => {
+    saveOriginData : async (originData) => {
         await fsPromises.writeFile(originDataPath, originData, {encoding: 'utf8'});
         console.log("原始数据存储成功!");
     },
 
     sendLatestMsg: async (originData) => {
         let oldMsg = await dataManager.getLatestMsg();
-        await dataManager.saveOriginData();
+        await dataManager.saveOriginData(originData);
 
         let latest = await dataManager.getLatestMsg();
         if(oldMsg.title === latest.title){
