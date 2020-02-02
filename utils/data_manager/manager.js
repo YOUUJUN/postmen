@@ -64,7 +64,7 @@ const dataManager = {
             secureConnection: true, // SSL安全链接
             auth: {   //发送者的账户密码
                 user: 'kehanlove@foxmail.com', //账户
-                pass: 'gscfpfmotofkbeaa', //smtp授权码，到邮箱设置下获取
+                pass: '', //smtp授权码，到邮箱设置下获取
             }
         });
 
